@@ -166,7 +166,11 @@ struct GeometricalShapeReader {
         print("Type-in your choice:", separator: " ", terminator: " ")
 
         guard let chosenShape = readLine(), let shape = Int(chosenShape), shape >= 1 && shape <= allShapes.count  else { return chooseShape() }
-        return GeometricalShapes(rawValue: shape - 1)
+        print("")
+        let shapeToGoAhead = GeometricalShapes(rawValue: shape - 1)
+        print("Congratulations! You have chosen '\(shapeToGoAhead!.name)'")
+        print("")
+        return shapeToGoAhead
     }
 
     func read() -> GeometricalShapable {
